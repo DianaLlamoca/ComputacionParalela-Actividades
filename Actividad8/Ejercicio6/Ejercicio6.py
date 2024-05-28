@@ -44,6 +44,8 @@ def parallel_word_count(file_paths):
         #que el orden en que son enviados los archivos no importa, sino quién terminó de realizarse primero)
         for future in concurrent.futures.as_completed(future_to_file):
             #Acá se ingresa al diccionario que tiene de clave el "future", es decir, el "file_path" o nombre del archivo
+            #(recordar que el diccionario "future_to_file" es de la forma {feature:file_path})
+            #Resumen: Lo que se hace es imprimir por pantalla el nombre del archivo que terminó de realizarse primero
             file_path = future_to_file[future]
             print(file_path)
 

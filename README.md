@@ -1,1 +1,0 @@
-# ComputacionParalela-Actividades

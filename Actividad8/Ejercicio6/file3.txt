@@ -1,0 +1,2 @@
+file3 texto
+texto de prueba del archivo 3

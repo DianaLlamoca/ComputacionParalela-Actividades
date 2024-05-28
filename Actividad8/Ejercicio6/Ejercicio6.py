@@ -32,7 +32,7 @@ def count_words_in_file(file_path):
     return (file_path, word_count)
 
 def parallel_word_count(file_paths):
-    #Se crea un diccionario
+    #Se crea un diccionario en donde se almacenará el resultado final
     results = {}
     with concurrent.futures.ThreadPoolExecutor() as executor:
         #Se crea un grupo de hilos para que realicen las tareas y los valores serán almacenados en un diccionario

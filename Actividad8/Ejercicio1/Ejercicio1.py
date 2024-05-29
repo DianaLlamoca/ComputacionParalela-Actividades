@@ -27,7 +27,7 @@ if __name__ == '__main__':
         print(f"shape de la imagen {image.shape}")
         height, width, _ = image.shape
         segments = np.array_split(image, 4, axis=1)
-        #Se divide la imagen en 4 segmentos
+        #Se divide la imagen en 4 segmentos de la forma [np.array[],np.array[],np.array[].np.array[]). 
 
         #Acá, por cada segmento, se crea 1 proceso, el cual aplicará la función de desenfoque gaussiano a cada porción de la imagen
         with Pool(processes=4) as pool:

@@ -27,13 +27,17 @@ if __name__ == '__main__':
         print(f"shape de la imagen {image.shape}")
         height, width, _ = image.shape
         segments = np.array_split(image, 4, axis=1)
-        #Se divide la imagen en 4 segmentos de la forma [np.array[],np.array[],np.array[].np.array[]). 
+        #Se divide la imagen en 4 segmentos
+
+        #(De manera breve, lo que hace np.array_split es lo siguiente:
+        #arr = np.array([1, 2, 3, 4, 5, 6]) --> np.array_split(arr, 3) = [array([1,2]),array([3,4]),array([5,6])]
+        #De manera similar, se divide la imagen en 4 segmentos, pero en vez de solo arreglos de una dimensión, estos serán de mayor dimensión (pues es una imagen)
 
         #Acá, por cada segmento, se crea 1 proceso, el cual aplicará la función de desenfoque gaussiano a cada porción de la imagen
         with Pool(processes=4) as pool:
             blurred_segments = pool.map(apply_blur, segments) #Claramente, segments es un iterable de arrays
 
-        #Esta función junta los 4 segmentos divididos anteriormente
+        #Esta función junta los 4 segmentos de la imagen divididos anteriormente
         blurred_image = np.hstack(blurred_segments)
         #Se guarda la imagen a partir de blurred_image, pues estos contienen los segmentos ya unidos, con las operaciones del desenfoque aplicadas en cada uno de ellos
         cv2.imwrite('blurred_image.jpg', blurred_image)

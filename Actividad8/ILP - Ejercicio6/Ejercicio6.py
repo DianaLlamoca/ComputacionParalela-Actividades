@@ -16,7 +16,7 @@ class BranchPredictor:
         self.history[branch] = taken
 
 def main():
-    #Se crea una instancia de la clase BrachPredictor, el cual tendrá un historial (por el constructor)
+    #Se crea una instancia de la clase BranchPredictor, el cual tendrá un historial (por el constructor)
     #que representará al "historial de bifurcaciones" (este registra los patrones de bifurcaciones para
     #hacer predicciones más precisas) Si acierta, el procesador, como ha estado ejecutando instrucciones
     #basadas en predicciones anteriores, se ha "ganado tiempo" al haberse adelantado

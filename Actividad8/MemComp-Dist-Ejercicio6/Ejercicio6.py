@@ -21,8 +21,7 @@ def main():
     processes = []
 
     for _ in range(4):
-        #Para cada proceso que se crea, se pasa como parámetro el objeto "lock", pues cada proceso debe tener
-        #dicho objeto y así evitar problemas con la variable local
+        #Para cada proceso que se crea, se pasan como parámetros los parámetros de la función "increment" --> (shared_value,lock)
         p = multiprocessing.Process(target=increment, args=(shared_value, lock))
         processes.append(p)
         p.start()

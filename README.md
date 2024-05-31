@@ -6,3 +6,6 @@
 
 # Paralelismo a nivel de instrucciones en Python:
 ## - ILP Ejercicio6, ILP Ejercicio7
+
+# Memoria compartida y distribuida en Python:
+## - MemComp-Dist-Ejercicio6, MemComp-Dist-Ejercicio8, MemComp-Dist-Ejercicio10, MemComp-Dist-Ejercicio12

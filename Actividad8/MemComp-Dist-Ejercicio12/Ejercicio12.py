@@ -16,6 +16,7 @@ class CacheLine:
             #Modificado significa que únicamente este procesador tiene una copia válida del bloque en su
             #caché, la copia en la memoria principal está "desactualizada" y ninguna otra caché puede tener una copia
             #válida del bloque
+            #El dato que ese procesador, en su caché tiene, es diferente al dato de la memoria principal
             self.state = 'M'
             print("Transition to Modified")
         self.value = value

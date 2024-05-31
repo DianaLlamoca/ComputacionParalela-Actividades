@@ -33,12 +33,10 @@ class Cache:
 
     def snoop(self):
         while True:
-            print("entré al bucle snoop")
             with bus_lock:
                 #Debido a que luego de un tiempo, la lista que representa las operaciones en el bus
                 #se va llenando, esta condicional se cumplirá
                 if bus_operations:
-                    print("realizo la operación para el hilo demonio 1")
                     #Se obtiene la primera operación (que sería la operación de "escritura" para el núcleo 1
                     #el cual es una tupla
                     op = bus_operations.pop(0) #op tiene la forma: [(id,operación, índice, valor)]
@@ -49,11 +47,11 @@ class Cache:
                         #en la caché de ese núcleo (representado por un hilo), se coloca ese "valor" en el "índice".
                         #Es decir, en la caché de ese núcleo se realiza la operación de escritura para ese valor en el índice indicado
                         #Y así para cada uno de los hilos demonios en la función "snoop"
-                        
+
                         #De manera resumida, cada hilo (núcleo) está escribiendo sus valores en sus cachés respectivas
                         self.cache[op[2]] = op[3]
                         print("caché",self.cache)
-                    
+
                     #La lista bus_operations al final quedará vacía (pues se usa el comando .pop)
             time.sleep(0.01)
 

@@ -3,3 +3,6 @@
 
 # Paralelismo de tareas en Python:
 ## - Ejercicio6, Ejercicio7, Ejercicio8
+
+# Paralelismo a nivel de instrucciones en Python:
+## - ILP Ejercicio6, ILP Ejercicio7
